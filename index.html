@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TODO </title>
 </head>
+
 <body>
-
-    <h1>To-Do List</h1>
-    <div class="todo-container">
-        <input type="text" id="new-task" placeholder="What's on your mind?">
-        <button id="add-task-button">Add Task</button>
-        <ul id="todo-list"></ul>
-    </div>
-
-    <script src="script.js"></script>
+    <div class="body">
+        <div class="box">
+        <h1>Todo List</h1>
+        <link rel="stylesheet" href="style.css">
+        <div>
+            <input class="text" type="text" id="task" placeholder="Enter your task">
+            <button>Add</button>
+        </div>
+        <div class="list">
+            <u><h2>My Tasks</h2></u>
+            <ul>
+                <li><input type="checkbox" id="buy" name="buy">
+                    <label for="buy">Solve Leetcode</label>
+                </li>
+                <li><input type="checkbox" id="kids" name="kids">
+                    <label for="kids">Prepare for interviews</label>
+                </li>
+                <li><input type="checkbox" id="dish" name="dish">
+                    <label for="dish">Complete the project</label>
+                </li>
+            </ul>
+        </div>
     
+        <b>Completed : 0 | Incomplete : 0 </b>
+    </div>
+</div>
 </body>
+
+
 </html>
