@@ -1,38 +1,29 @@
-var input = document.getElementById('new-task');
-var ul = document.getElementById('todo-list');
-var addButton = document.getElementById('add-task-button');
-
-addButton.onclick = function() {
-    var taskText = input.value;
-    if (taskText !== '') {
-        var li = document.createElement('li');
-
-        var checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-
-        var span = document.createElement('span');
-        span.textContent = taskText;
-
-        var deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-
-        li.appendChild(checkbox);
-        li.appendChild(span);
-        li.appendChild(deleteButton);
-        ul.appendChild(li);
-
-        input.value = '';
-
-        checkbox.onchange = function() {
-            if (checkbox.checked) {
-                li.className = 'completed';
-            } else {
-                li.className = '';
-            }
-        };
-
-        deleteButton.onclick = function() {
-            ul.removeChild(li);
-        };
+function addTask() {
+    var task = document.getElementById("taskInput").value;
+    if (task === "") {
+        alert("Please enter a task");
+    } else {
+        var li = document.createElement("li");
+        li.innerHTML = '<input type="checkbox" onclick="updateCount()">' + task;
+        document.getElementById("taskList").appendChild(li);
+        document.getElementById("taskInput").value = "";
+        updateCount();
     }
-};
+}
+
+function updateCount() {
+    var tasks = document.querySelectorAll('#taskList input[type="checkbox"]');
+    var completed = 0;
+    var incomplete = 0;
+
+    tasks.forEach(function(task) {
+        if (task.checked) {
+            completed++;
+        } else {
+            incomplete++;
+        }
+    });
+
+    document.getElementById("completed").innerText = completed;
+    document.getElementById("incomplete").innerText = incomplete;
+}

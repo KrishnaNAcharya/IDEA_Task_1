@@ -4,37 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO </title>
+    <title>TODO List</title>
 </head>
 
 <body>
-    <div class="body">
-        <div class="box">
+    <div>
         <h1>Todo List</h1>
         <link rel="stylesheet" href="style.css">
-        <div>
-            <input class="text" type="text" id="task" placeholder="What's on your mind?">
-            <button>Add</button>
-        </div>
-        <div class="list">
-            <u><h2>My Tasks</h2></u>
-            <ul>
-                <li><input type="checkbox" id="buy" name="buy">
-                    <label for="buy">Solve Leetcode</label>
-                </li>
-                <li><input type="checkbox" id="kids" name="kids">
-                    <label for="kids">Prepare for interviews</label>
-                </li>
-                <li><input type="checkbox" id="dish" name="dish">
-                    <label for="dish">Complete the project</label>
-                </li>
-            </ul>
-        </div>
-    
-        <b>Completed tasks : 0 | Incomplete tasks: 0 </b>
-    </div>
-</div>
-</body>
+        <input id="taskInput" type="text" placeholder="What's on your mind?">
+        <button onclick="addTask()">Add</button>
 
+        <h2>My Tasks</h2>
+        <ul id="taskList">
+            <li>
+                <input type="checkbox" onclick="updateCount()"> Solve Leetcode
+            </li>
+            <li>
+                <input type="checkbox" onclick="updateCount()"> Prepare for interviews
+            </li>
+            <li>
+                <input type="checkbox" onclick="updateCount()"> Complete the project
+            </li>
+        </ul>
+
+        <b>Completed tasks: <span id="completed">0</span> | Incomplete tasks: <span id="incomplete">0</span></b>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 
 </html>
